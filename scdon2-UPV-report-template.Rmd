@@ -1,7 +1,7 @@
 ---
 title: "Rapport de groupe des UE \\newline  Bases de données + Sciences des Données 2"
 author:
-- 'Sarah Guilleminor, '
+- 'Sarah Guilleminot, '
 - Sara Fenina,
 - Ambinintsoa Rakoto,
 - Stéphanie  Sbircéa,
@@ -190,15 +190,57 @@ définir quelles sont les \textbf{unités statistiques}.
 ## Descriptif des tables
 
 Pour chaque table conservée, préciser le nombre de lignes et de colonnes après filtrage, lister les colonnes et donner pour chacune le type, la signification du champ et des caractéristiques (unique, clés, valeur manquante, ...) en remplissant le tableau ci-dessous.
-
 | Nom colonne | Type | Signification | Caractéristique |
-|:-----------:|:----:|:-------------:|:---------------:|
-|             |      |               |                 |
+
+| abilities        | Chaîne (texte) | Capacités spéciales du Pokémon                  | Liste de capacités (ex : Overgrow, Blaze…) |
+| against_bug      | Réel           | Multiplicateur de dégâts contre le type Insecte | 0.5 = résistant, 1 = neutre, 2 = faible    |
+| against_dark     | Réel           | Multiplicateur contre type Ténèbres             | Même logique (0.5, 1, 2…)                  |
+| against_dragon   | Réel           | Multiplicateur contre type Dragon               | Idem                                       |
+| against_electric | Réel           | Multiplicateur contre type Électrique           | Idem                                       |
+| against_fairy    | Réel           | Multiplicateur contre type Fée                  | Idem                                       |
+| against_fight    | Réel           | Multiplicateur contre type Combat               | Idem                                       |
+| against_fire     | Réel           | Multiplicateur contre type Feu                  | Idem                                       |
+| against_flying   | Réel           | Multiplicateur contre type Vol                  | Idem                                       |
+| against_ghost    | Réel           | Multiplicateur contre type Spectre              | Idem                                       |
+| against_grass    | Réel           | Multiplicateur contre type Plante               | Idem                                       |
+| against_ground   | Réel           | Multiplicateur contre type Sol                  | Idem                                       |
+| against_ice      | Réel           | Multiplicateur contre type Glace                | Idem                                       |
+| against_normal   | Réel           | Multiplicateur contre type Normal               | Idem                                       |
+| against_poison   | Réel           | Multiplicateur contre type Poison               | Idem                                       |
+| against_psychic  | Réel           | Multiplicateur contre type Psy                  | Idem                                       |
+| against_rock     | Réel           | Multiplicateur contre type Roche                | Idem                                       |
+| against_steel    | Réel           | Multiplicateur contre type Acier                | Idem                                       |
+| against_water    | Réel           | Multiplicateur contre type Eau                  | Idem                                       |
+       |      |               |                 |
+
+| name           | Chaîne           | Nom du Pokémon            | Ex : Bulbasaur, Charmander    |
+| pokedex_number | Entier           | Numéro dans le Pokédex    | Identifiant unique            |
+| type1          | Chaîne           | Type principal            | Ex : Grass, Fire              |
+| type2          | Chaîne           | Type secondaire           | Peut être vide                |
+| height_m       | Réel             | Taille en mètres          | Valeur numérique              |
+| weight_kg      | Réel             | Poids en kg               | Valeur numérique              |
+| generation     | Entier           | Génération du Pokémon     | 1 à 7 (ou plus selon dataset) |
+| is_legendary   | Entier (booléen) | Pokémon légendaire ou non | 0 = non, 1 = oui              |
+
+| attack      | Entier | Attaque du Pokémon | Valeur numérique (plus élevé = plus puissant physiquement) |
+| defense     | Entier | Défense            | Résistance aux attaques physiques                          |
+| sp_attack   | Entier | Attaque spéciale   | Puissance des attaques spéciales                           |
+| sp_defense  | Entier | Défense spéciale   | Résistance aux attaques spéciales                          |
+| speed       | Entier | Vitesse            | Détermine l’ordre d’attaque                                |
+| hp          | Entier | Points de vie      | Santé du Pokémon                                           |
+| base_total  | Entier | Total des stats    | Somme des statistiques                                     |
+
+| ----------------- | ------ | -------------------------------- | ------------------------ |
+| capture_rate      | Entier | Facilité de capture              | Plus élevé = plus facile |
+| experience_growth | Chaîne | Type de progression              | Ex : slow, medium, fast  |
+| base_egg_steps    | Entier | Nombre de pas pour éclore un œuf | Plus élevé = plus long   |
 
 Table: Nom de la table (nombre de lignes $\times$ nombre de colonnes)
 
 
 ## Modèles MCD et MOD
+
+
 
 
   ![Relations.](tuto-0019(1).pdf){#uml width="8cm" height="4cm"}
