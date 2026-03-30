@@ -4,7 +4,7 @@ author:
 - 'Sarah Guilleminot, '
 - Sara Fenina,
 - Ambinintsoa Rakoto,
-- Stéphanie  Sbircéa,
+- Stephanie  Sbircea,
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   html_document:
@@ -88,7 +88,9 @@ Sarah Guilleminot : Étudiante n°22405827, Resp. de la collecte des données.
 
 Sara Fenina : Étudiante n°XXXX, Resp. recherche bases de données.
 
-Ambinintsoa Rakota:
+Ambinintsoa Rakoto: Étudiante n°22402951, Resp. import des données.
+
+Stephanie Sbircea: Étudiante n°XXXX, Resp. Descriptif des tables.
 
 
 
