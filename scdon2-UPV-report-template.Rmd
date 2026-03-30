@@ -84,7 +84,7 @@ Vous devez décrire les principaux rôles de chaque membre du groupe dans l'équ
 
 \medskip
 
-Sarah Guilleminot : Étudiant n°XXXX, Resp. de la collecte des données.
+Sarah Guilleminot : Étudiant n°22405827, Resp. de la collecte des données.
 
 Sara Fenina : Étudiant n°XXXX, Resp. du rapport.
 
@@ -165,9 +165,8 @@ Table: une légende au-dessus du tableau. \label{tab7.1}
 # Base de données
 
 ## Provenance des données
-
-Donner ici le ou les \textbf{lien}(s) vers le(s) jeu(x) de données que vous avez
-utiliser pour votre travail et présenter les rapidement. 
+pokemon: https://www.kaggle.com/datasets/rounakbanik/pokemon) et
+data_world: (https://data.world/notgibs/pokemon-wonder-trade-results/workspace/file?filename=Wonder+Trade.csv)
 
 
 \bigskip
