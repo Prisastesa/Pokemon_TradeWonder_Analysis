@@ -172,19 +172,27 @@ data_world: (https://data.world/notgibs/pokemon-wonder-trade-results/workspace/f
 
 
 \bigskip
-On a sélectionné  la table pokémon car elle contient les données relatif au description d'un pokémon et la table wonder trade car elle contient les informations concernant les échanges.
- Les données sont stockées sous formats csv . Le fichier pockemon.csv  (38 colonnes et 802 lignes)  et le fichier wonder trade (15 colonnes et 501 lignes) 
-\bigskip
+On a sélectionné la table pokemon car elle contient les données relatives à la description des Pokémon, et la table wonder trade car elle contient les informations concernant les échanges.
 
-  Expliquer quels choix vous avez réalisés pour filtrer les lignes et les colonnes (éventuellement réduire le périmètre du projet) et décrire les critères de sélection (e.g., ne garder que 5 colonnes sur les 15, ne garder que les lignes qui correspondent à une ville en particulier, \ldots).
+Les données sont stockées sous format CSV : le fichier pokemon.csv contient 38 colonnes et 802 lignes, tandis que le fichier wonder trade.csv contient 15 colonnes et 501 lignes.
 
 \bigskip
 
-  Finalement, définir
-clairement quelle est la \textbf{population étudiée}. Vous devez 
-expliquer quelles données vous avez utiliser et en quoi elles peuvent
-permettre d'apporter des éléments de réponses aux questions posées. Bien
-définir quelles sont les \textbf{unités statistiques}.
+Afin de faciliter l’analyse, nous avons choisi de filtrer certaines colonnes. En effet, toutes les variables n’étaient pas nécessaires pour répondre à notre problématique.
+
+Dans la table pokemon, nous avons conservé uniquement les colonnes les plus pertinentes, notamment celles liées aux caractéristiques principales comme les statistiques (attack, defense, speed, base_total), les types (type1, type2), ainsi que des informations générales comme la génération et le caractère légendaire.
+
+Dans la table wonder trade, nous avons également sélectionné un sous-ensemble de colonnes parmi les 15 colonnes initiales, en conservant celles décrivant les échanges (niveau, région, nature, objets, etc.).
+
+\bigskip
+
+Ce filtrage permet de réduire le nombre de variables tout en gardant les informations essentielles, ce qui rend l’analyse plus claire et plus pertinente.
+
+Concernant les lignes, nous avons choisi de conserver l’ensemble des observations, soit 802 Pokémon et 501 échanges, afin de ne pas biaiser les résultats et de garder une vision globale des données.
+
+\bigskip
+
+La population étudiée correspond à l’ensemble des Pokémon du fichier pokemon.csv ainsi qu’aux échanges du fichier wonder trade.csv.
 
 
 ## Descriptif des tables
