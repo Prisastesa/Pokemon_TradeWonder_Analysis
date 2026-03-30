@@ -90,7 +90,7 @@ Sara Fenina : Étudiante n°22411291, Resp. recherche bases de données.
 
 Ambinintsoa Rakoto: Étudiante n°22402951, Resp. Descriptif des tables.
 
-Stephanie Sbircea: Étudiante n°XXXX, Resp. import des données.
+Stephanie Sbircea: Étudiante n°22304694, Resp. import des données.
 
 
 
@@ -284,16 +284,47 @@ digraph boxes_and_circles {
 
 ## Import des données 
 
-- Préciser les nettoyages réalisés avant l'import comme l'uniformisation des valeurs des champs (_e.g._, Mr, M., Monsieur, ...) ou le remplissage des valeurs manquantes par une valeur moyenne ...
+## Import des données 
 
-\begin{itemize}
-    \item  Source de données 1 :
-    \begin{itemize} 
-     \item Suppression des colonnes XXX, car XXX
-     \item  Suppression des doublons dans les colonnes XXX
-    \item  Filtrage en fonction de la colonne XXx, nous n'avons conservé que.... 
-\end{itemize}
-\end{itemize}
+
+
+Source de données 1 : wonder_trade
+
+Suppression de certaines colonnes jugées inutiles (comme weight et height), car elles n’étaient pas pertinentes pour l’analyse réalisée.
+
+Vérification de la cohérence des noms de Pokémon : une requête a permis d’identifier les noms présents dans "wonder_trade" mais absents de la table "pokemon" :
+
+    SELECT DISTINCT wonder_trade.Pokemon
+    FROM wonder_trade
+    WHERE wonder_trade.Pokemon NOT IN (SELECT name FROM pokemon);
+
+Cette vérification a montré des noms commençant par "A." suivi du nom du pokémon. Une correction a été effectuée directement dans la base avec la requête suivante :
+
+    UPDATE wonder_trade
+    SET Pokemon = REPLACE(Pokemon, 'A.', '')
+    WHERE Pokemon LIKE 'A.%';
+
+Après correction, tous les noms de Pokémon de wonder_trade" correspondent bien à ceux de la table "pokemon".
+
+Ajout d’une clé primaire afin de respecter le modèle relationnel :
+
+    ALTER TABLE wonder_trade
+    ADD id_trade INT AUTO_INCREMENT PRIMARY KEY;
+
+
+Source de données 2 : pokemon
+
+Mise en place d’une clé primaire sur la colonne "pokedex_number" afin d’identifier de manière unique chaque Pokémon :
+
+    ALTER TABLE pokemon
+    ADD PRIMARY KEY (pokedex_number);
+
+Renommage de la colonne "pokedex_number" en "id_pokemon" pour une meilleure lecture :
+
+    ALTER TABLE pokemon
+    RENAME COLUMN pokedex_number TO id_pokemon;
+
+
 
 
 ## Requêtes réalisées
