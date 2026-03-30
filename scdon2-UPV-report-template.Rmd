@@ -172,9 +172,8 @@ data_world: (https://data.world/notgibs/pokemon-wonder-trade-results/workspace/f
 
 
 \bigskip
-
-  Dans le jeu de données récupéré, expliquer pourquoi vous avez sélectionné certaines tables ou pourquoi vous en avez rajouté. Vous devez indiquer comment les données sont stockées (le format csv, txt...), la taille des fichiers, le nombre de lignes et de colonnes, \ldots{}
-
+On a sélectionné  la table pokémon car elle contient les données relatif au description d'un pokémon et la table wonder trade car elle contient les informations concernant les échanges.
+ Les données sont stockées sous formats csv . Le fichier pockemon.csv  (38 colonnes et 802 lignes)  et le fichier wonder trade (15 colonnes et 501 lignes) 
 \bigskip
 
   Expliquer quels choix vous avez réalisés pour filtrer les lignes et les colonnes (éventuellement réduire le périmètre du projet) et décrire les critères de sélection (e.g., ne garder que 5 colonnes sur les 15, ne garder que les lignes qui correspondent à une ville en particulier, \ldots).
