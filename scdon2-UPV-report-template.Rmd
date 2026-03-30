@@ -248,46 +248,23 @@ Table: Nom de la table (nombre de lignes $\times$ nombre de colonnes)
 
 ## Modèles MCD et MOD
 
+### MCD
 
+  ![**Figure 1 MCD**.](tuto-0019(1).png){#uml width="15cm" height="9cm"}
 
+### MOD :
 
-  ![Relations.](tuto-0019(1).pdf){#uml width="8cm" height="4cm"}
+  ![**Figure 2.1 MOD.**](pokewonder (1).png){#uml width="18cm" height="30cm"}
+  
+  
+  
+  
 
-- Pour le MOD, inclure une image réalisée avec le designer de phpmyadmin
+  MOD :
+  
+ POKEMON (pokedex_number, name, type1, type2, hp, attack, defense, sp_attack, sp_defense, speed, base_total, capture_rate, is_legendary, generation)
 
-\bigskip
-
-Noter en passant qu'il est possible de créer des diagrammes en R Markdown au moyen du package `DiagrammeR` [\url{https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html}] comme on peut le voir ci-dessous.
-
-```{r out.height="10cm", fig.align = 'center'}
-# install.packages("webshot",dependencies = TRUE)
-# library(webshot)
-# webshot::install_phantomjs()
-Sys.setenv(OPENSSL_CONF="/dev/null")
-DiagrammeR::grViz("
-digraph boxes_and_circles {
-
-  # a 'graph' statement
-  graph [overlap = true, fontsize = 10]
-
-  # several 'node' statements
-  node [shape = box,
-        fontname = Helvetica]
-  A; B; C; D; E; F
-
-  node [shape = circle,
-        fixedsize = true,
-        width = 0.9] // sets as circles
-  1; 2; 3; 4; 5; 6; 7; 8
-
-  # several 'edge' statements
-  A->1 B->2 B->3 B->4 C->A
-  1->D E->A 2->4 1->5 1->F
-  E->6 4->6 5->7 6->7 3->8
-}
-")
-```
-
+TRADE (id_trade, date_trade, time_trade, trainer_region, trainer_subregion, pokemon_region, level, level_met, gender, nature, pokeball, held_item, perfect_ivs, #pokedex_number)
 
 ## Import des données 
 
@@ -304,7 +281,7 @@ Vérification de la cohérence des noms de Pokémon : une requête a permis d’
     SELECT DISTINCT wonder_trade.Pokemon
     FROM wonder_trade
     WHERE wonder_trade.Pokemon NOT IN (SELECT name FROM pokemon);
-
+![**Figure 3 Normalisation des nom de pokemon**.](normalisation.png){#uml width="15cm" height="9cm"}
 Cette vérification a montré des noms commençant par "A." suivi du nom du pokémon. Une correction a été effectuée directement dans la base avec la requête suivante :
 
     UPDATE wonder_trade
