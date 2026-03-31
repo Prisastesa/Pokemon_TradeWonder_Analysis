@@ -122,7 +122,7 @@ Le désavantage de travailler avec un `.Rmd` sous `RStudio` est que vous travail
 **Figure : ** Pour inclure une figure, il faut qu'elle ait une légende (ce qui est le cas pour la Figure$~$\ref{myfigure} ci-après) et qu'elle soit référencée quelque part dans le document (ce qui est le cas dans les parenthèses qui précédent). 
 
 
-![Une légende sous la figure.](logo-upvm_4.jpg){#myfigure width="4cm" height="2cm"}
+![Une légende sous la figure.](OIP.jpg){#myfigure width="4cm" height="2cm"}
 
 \bigskip
 
